@@ -1,14 +1,25 @@
 # Chi Mai
 
 def encode(num_string):
-    new_password = ""
+    original_password = ""
     for num in num_string:
         num = int(num)
         num += 3
         num = str(num)
-        new_password += num
-    return new_password
+        original_password += num
+    return original_password
 
+def decode(num_string):
+
+    # written by Abigail Hennessey
+
+    new_password = ""
+    for num in num_string:
+        num = int(num)
+        num -= 3
+        num = str(num)
+        new_password -= num
+    return new_password
 
 def main():
     menu = '''Menu
@@ -26,6 +37,11 @@ def main():
             user_password = input("Please enter your password to encode: ")
             encode(user_password)
             print("Your password has been encoded and stored!\n")
+
+        if option == 2:
+            user_password = input("Please enter your password to decode: ")
+            decode(user_password)
+            print("Your password has been decoded and stored!\n")
 
         elif option == 3:
             break
